@@ -53,6 +53,7 @@ def parse(enter, state):
     elif command == "START":
         if not start(parts, state):
             print ("ERROR message - unsupported size or other error")
+            return
         print("OK - everything is good")
     elif command == "TURN":
         turn(parts, state)
