@@ -19,7 +19,6 @@ def start(parts, state):
         return False
     except (IndexError, ValueError):
         return False
-    
 
 def turn(parts, state):
     if len(parts) != 2:
@@ -52,18 +51,22 @@ def parse(enter, state):
         return "END"
     elif command == "START":
         if not start(parts, state):
-            print ("ERROR message - unsupported size or other error")
-            return
-        print("OK - everything is good")
+            return "ERROR: Invalid arguments for START command."
+        print("OK: Game has started.")
     elif command == "TURN":
-        turn(parts, state)
+        if not state.started:
+            return "ERROR: The game has not started yet."
+        if not turn(parts, state):
+            print("ERROR: Invalid arguments for TURN command.")
     elif command == "BEGIN":
         state.starter = True
         enter = input("Entrer position: ").strip
         print(enter)
     elif command == "BOARD":
+        if not state.map:
+            return "ERROR: Board not initialized. Please start a game using the START command."
         if not board(parts, state):
-            return "ERROR"
+            return "ERROR: Invalid board format."
         return "BOARD"
     elif command == "INFO":
         return "INFO"
@@ -73,4 +76,4 @@ def parse(enter, state):
         state.map.print_map()
         return "PRINT"
     else:
-        return "ERROR"
+        return "ERROR: Unknown command"

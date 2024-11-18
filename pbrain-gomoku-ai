@@ -9,14 +9,22 @@ from src.gameState import GameState
 from src.parse import parse
 
 def run():
-    enter = ""
-    state = GameState()
-    while enter.lower() != "END":
-        enter = input()
-        type = parse(enter, state)
-        if type == "END":
-            return
+    try:
+        enter = ""
+        state = GameState()
+        while enter.upper() != "END":
+            enter = input().strip()
+            if not enter:
+                continue
+            result = parse(enter, state)
+            if result == "END":
+                return
+            elif result:
+                print(result)
+    except KeyboardInterrupt:
+        print("\nProgram interrupted by user. Exiting...")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
 
 if __name__ == "__main__":
     run()
-
