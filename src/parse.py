@@ -7,6 +7,23 @@
 
 from src.board import board
 
+def rectstart(parts, state):
+    if len(parts) != 2:
+        return "ERROR: Invalid arguments for RECTSTART command. Expected format: RECTSTART width,height."
+    try:
+        width_str, height_str = parts[1].split(',')
+        width = int(width_str.strip())
+        height = int(height_str.strip())
+
+        if width <= 0 or height <= 0:
+            return "ERROR: Invalid dimensions for RECTSTART. Width and height must be positive."
+
+        state.map.init_tab_rectangular(width, height)
+        return "OK: Rectangular board has started."
+
+    except (IndexError, ValueError):
+        return "ERROR: Invalid format for RECTSTART command."
+
 def restart_game(state):
     if not state.started:
         return "ERROR: The game has not started yet."
@@ -83,8 +100,10 @@ def parse(enter, state):
         return "PRINT"
     elif command == "RESTART":
         return restart_game(state)
+    elif command == "RECTSTART":
+        return rectstart(parts, state)
     else:
-        return "ERROR: Unknown command"def restart_game(state):
+        return "ERROR: Unknown command"
     if not state.started:
         return "ERROR: The game has not started yet."
     state.map.restart()

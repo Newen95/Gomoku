@@ -10,6 +10,11 @@ class Map:
         self.size = size
         self.map = [[0 for _ in range(size)] for _ in range(size)]
 
+    def init_tab_rectangular(self, width, height):
+        self.size_x = width
+        self.size_y = height
+        self.map = [[0 for _ in range(width)] for _ in range(height)]
+
     def restart(self):
         self.map = [[0 for _ in range(self.size)] for _ in range(self.size)]
 
