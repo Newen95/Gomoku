@@ -7,6 +7,27 @@
 
 from src.board import board
 
+def play(parts, state):
+    if len(parts) != 2:
+        return "ERROR: Invalid arguments for PLAY command. Expected format: PLAY x,y."
+    try:
+        x_str, y_str = parts[1].split(',')
+
+        if not x_str.isdigit() or not y_str.isdigit():
+            return "ERROR: Invalid coordinates. They must be numbers."
+
+        x = int(x_str.strip())
+        y = int(y_str.strip())
+
+        if x >= state.map.size or y >= state.map.size:
+            return "ERROR: Coordinates out of the map."
+
+        if state.map.update_element(x, y, 1):
+            return "OK: PLAY command worked correctly."
+        return "ERROR: Unable to place the move."
+    except (IndexError, ValueError):
+        return "ERROR: Invalid format. Expected format: PLAY x,y."
+
 def takeback(parts, state):
     if len(parts) != 2:
         return "ERROR: Invalid arguments for TAKEBACK command. Expected format: TAKEBACK x,y."
@@ -117,6 +138,8 @@ def parse(enter, state):
         return rectstart(parts, state)
     elif command == "TAKEBACK":
         return takeback(parts, state)
+    elif command == "PLAY":
+        return play(parts, state)
     else:
         return "ERROR: Unknown command"
     if not state.started:
