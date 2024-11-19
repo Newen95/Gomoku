@@ -18,7 +18,7 @@ def run():
                 continue
             result = parse(enter, state)
             if result == "END":
-                return
+                return 0
             elif result:
                 print(result)
     except KeyboardInterrupt:
