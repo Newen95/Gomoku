@@ -7,6 +7,13 @@
 
 from src.board import board
 
+def restart_game(state):
+    if not state.started:
+        return "ERROR: The game has not started yet."
+    state.map.restart()
+    state.started = False
+    return "OK: Game has been restarted."
+
 def start(parts, state):
     if len(parts) != 2:
         return "ERROR: Invalid number of arguments."
@@ -74,5 +81,12 @@ def parse(enter, state):
             return "ERROR: The game has not started yet."
         state.map.print_map()
         return "PRINT"
+    elif command == "RESTART":
+        return restart_game(state)
     else:
-        return "ERROR: Unknown command"
+        return "ERROR: Unknown command"def restart_game(state):
+    if not state.started:
+        return "ERROR: The game has not started yet."
+    state.map.restart()
+    state.started = False
+    return "OK: Game has been restarted."
