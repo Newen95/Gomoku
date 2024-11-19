@@ -25,35 +25,25 @@ def print_command(state):
 def parse(enter, state):
     parts = enter.strip().split()
     command = parts[0].upper() if parts else ""
-
-    if command == "END":
-        return "END"
-    elif command == "START":
-        return start_command(parts, state)
-    elif command == "TURN":
-        return turn_command(parts, state)
-    elif command == "BEGIN":
-        return begin_command(state)
-    elif command == "BOARD":
-        return board_command(parts, state)
-    elif command == "INFO":
-        return info_command(parts, state)
-    elif command == "ABOUT":
-        return "ABOUT"
-    elif command == "PRINT":
-        return print_command(state)
-    elif command == "RESTART":
-        return restart_game_command(state)
-    elif command == "RECTSTART":
-        return rectstart_command(parts, state)
-    elif command == "TAKEBACK":
-        return takeback_command(parts, state)
-    elif command == "PLAY":
-        return play_command(parts, state)
-    else:
-        return "ERROR: Unknown command"
+    
+    command_action = {
+        "END": lambda: "END",
+        "START": lambda: start_command(parts, state),
+        "TURN": lambda: turn_command(parts, state),
+        "BEGIN": lambda: begin_command(state),
+        "BOARD": lambda: board_command(parts, state),
+        "INFO": lambda: info_command(parts, state),
+        "ABOUT": lambda: "ABOUT",
+        "PRINT": lambda: print_command(state),
+        "RESTART": lambda: restart_game_command(state),
+        "RECTSTART": lambda: rectstart_command(parts, state),
+        "TAKEBACK": lambda: takeback_command(parts, state),
+        "PLAY": lambda: play_command(parts, state),
+    }
+    
+    action = command_action.get(command, lambda: "ERROR: Unknown command")
+    result = action()
+    
     if not state.started:
         return "ERROR: The game has not started yet."
-    state.map.restart()
-    state.started = False
-    return "OK: Game has been restarted."
+    return result
