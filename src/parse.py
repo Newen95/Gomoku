@@ -41,9 +41,17 @@ def parse(enter, state):
         "PLAY": lambda: play_command(parts, state),
     }
     
-    action = command_action.get(command, lambda: "ERROR: Unknown command")
-    result = action()
-    
-    if not state.started:
+    # Vérifiez si la commande existe
+    if command not in command_action:
+        return "ERROR: Unknown command."
+
+    # Si la commande est START, l'exécuter directement
+    if command == "START":
+        return command_action[command]()
+
+    # Pour toutes les autres commandes, vérifier si le jeu a démarré
+    if not state.started and command != "END":
         return "ERROR: The game has not started yet."
-    return result
+
+    # Exécutez la commande
+    return command_action[command]()
