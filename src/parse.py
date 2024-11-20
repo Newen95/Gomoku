@@ -38,6 +38,7 @@ def parse(enter, state):
         "PLAY": lambda: play_command(parts, state),
     }
     
+<<<<<<< HEAD
     if command not in command_action:
         return send_unknown("Unknown command.")
 
@@ -48,3 +49,9 @@ def parse(enter, state):
         return send_error("The game has not started yet.")
 
     return command_action[command]()
+=======
+    action = command_action.get(command, lambda: "ERROR: Unknown command")
+    result = action()
+    
+    return result
+>>>>>>> 815510a ([UPD] delete the test if the game was started)
