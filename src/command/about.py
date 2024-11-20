@@ -6,4 +6,4 @@
 ##
 
 def about_command():
-    return "ABOUT"
+    return "name=\"DaBrain\", version=\"1.0\", author=\"Sofiane LARBI; Newen Calle; Mélissa Mi You\", country=\"France\""
