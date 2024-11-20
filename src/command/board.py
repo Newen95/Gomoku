@@ -43,8 +43,6 @@ def board(parts, state):
         re_init_map(parts[0], state)
         
 def board_command(parts, gameState):
-    if not gameState.started:
-        return "ERROR: The game has not started yet."
     if not board(parts, gameState):
         return "ERROR: Invalid board format."
     return "BOARD"

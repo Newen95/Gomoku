@@ -8,8 +8,6 @@
 def turn_command(parts, state):
     if len(parts) != 2:
         return "ERROR: Invalid number of arguments for TURN command. Expected format: TURN x,y."
-    if not state.started:
-        return "ERROR: The game has not started yet."
     try:
         x_str, y_str = parts[1].split(',')
 
