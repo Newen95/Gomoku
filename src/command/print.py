@@ -5,6 +5,8 @@
 ## print
 ##
 
+from src.send import send_message   
+
 def print_command(state):
     state.map.print_map()
-    return "PRINT"
+    return send_message("PRINT")

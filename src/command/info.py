@@ -5,9 +5,11 @@
 ## info
 ##
 
+from src.send import send_error
+
 def info_command(parts, gameState):
     if len(parts) != 3:
-        return "ERROR: Incorrect number of arguments."
+        return send_error("Incorrect number of arguments.")
     
     command_actions = {
         "timeout_match": lambda: gameState.init_timeout_match(parts),
@@ -22,11 +24,11 @@ def info_command(parts, gameState):
     
     action = command_actions.get(parts[1])
     if action is None:
-        return f"ERROR: Unknown key '{parts[1]}'. Valid keys are: {', '.join(command_actions.keys())}"
+        return send_error(f"Unknown key '{parts[1]}'. Valid keys are: {', '.join(command_actions.keys())}")
 
     try:
         return action()
     except ValueError as e:
-        return f"ERROR: Invalid value '{parts[2]}' for key '{parts[1]}'. {str(e)}"
+        return send_error(f"Invalid value '{parts[2]}' for key '{parts[1]}'. {str(e)}")
     except Exception as e:
-        return f"ERROR: {str(e)}"
+        return send_error(f"{str(e)}")

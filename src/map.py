@@ -5,6 +5,9 @@
 ## map
 ##
 
+from src.send import send_error
+from src.send import send_message   
+
 class Map:
     
     def __init__(self):
@@ -31,15 +34,15 @@ class Map:
 
     def update_element(self, x, y, value):
         if x >= self.size or y >= self.size:
-            return f"ERROR: Position ({x}, {y}) is out of the map. The board size is {self.size}x{self.size}."
+            return send_error(f"Position ({x}, {y}) is out of the map. The board size is {self.size}x{self.size}.")
         if self.map[y][x] != 0:
-            return f"ERROR: Cell ({x}, {y}) is already occupied."
+            return send_error(f"Cell ({x}, {y}) is already occupied.")
         if value not in (1, 2):
-            return "ERROR: Invalid value. Allowed values are 1 or 2."
+            return send_error("Invalid value. Allowed values are 1 or 2.")
         
         self.map[y][x] = value
         self.history.append((x, y, value))
-        return f"OK"
+        return send_message("OK")
 
 
     def print_map(self):

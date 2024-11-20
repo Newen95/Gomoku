@@ -5,6 +5,9 @@
 ## board
 ##
 
+from src.send import send_error
+from src.send import send_message   
+
 def re_init_map(parts, state):
     try:
         x_str, y_str, value = parts.split(',')
@@ -44,6 +47,6 @@ def board(parts, state):
         
 def board_command(parts, gameState):
     if not board(parts, gameState):
-        return "ERROR: Invalid board format."
-    return "BOARD"
+        return send_error("Invalid board format.")
+    return send_message("BOARD")
 
