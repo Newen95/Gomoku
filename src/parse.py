@@ -15,12 +15,7 @@ from src.command.restart import restart_game_command
 from src.command.start import start_command
 from src.command.takeback import takeback_command
 from src.command.turn import turn_command
-
-def print_command(state):
-    if not state.started:
-        return "ERROR: The game has not started yet."
-    state.map.print_map()
-    return "PRINT"
+from src.command.print import print_command
 
 def parse(enter, state):
     parts = enter.strip().split()
@@ -41,17 +36,13 @@ def parse(enter, state):
         "PLAY": lambda: play_command(parts, state),
     }
     
-    # Vérifiez si la commande existe
     if command not in command_action:
         return "ERROR: Unknown command."
 
-    # Si la commande est START, l'exécuter directement
     if command == "START":
         return command_action[command]()
 
-    # Pour toutes les autres commandes, vérifier si le jeu a démarré
     if not state.started and command != "END":
         return "ERROR: The game has not started yet."
 
-    # Exécutez la commande
     return command_action[command]()
