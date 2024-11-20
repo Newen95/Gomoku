@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 execve("./zig-out/bin/liskvork", ["./zig-out/bin/liskvork"], 0x7ffef0e8fa40 /* 73 vars */) = 0
+=======
+execve("./zig-out/bin/liskvork", ["./zig-out/bin/liskvork"], 0x7ffdb49b4650 /* 73 vars */) = 0
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 arch_prctl(ARCH_SET_FS, 0x1072010)      = 0
 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
 prlimit64(0, RLIMIT_STACK, {rlim_cur=16384*1024, rlim_max=RLIM64_INFINITY}, NULL) = 0
@@ -7,6 +11,7 @@ rt_sigaction(SIGILL, {sa_handler=0x1037690, sa_mask=[], sa_flags=SA_RESTORER|SA_
 rt_sigaction(SIGBUS, {sa_handler=0x1037690, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_RESETHAND|SA_SIGINFO, sa_restorer=0x1055780}, NULL, 8) = 0
 rt_sigaction(SIGFPE, {sa_handler=0x1037690, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_RESETHAND|SA_SIGINFO, sa_restorer=0x1055780}, NULL, 8) = 0
 rt_sigaction(SIGPIPE, {sa_handler=0x1031cd0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x1055780}, NULL, 8) = 0
+<<<<<<< HEAD
 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea55a2000
 mmap(0x7ecea55a3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea55a1000
 mmap(0x7ecea55a2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea55a0000
@@ -70,14 +75,84 @@ openat(AT_FDCWD, "config.ini", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 3
 read(3, "[", 1)                         = 1
 mmap(0x7ecea5558000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5556000
 mmap(0x7ecea5557000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5555000
+=======
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e7000
+mmap(0x7fb10a8e8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e6000
+mmap(0x7fb10a8e7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e5000
+mmap(0x7fb10a8e6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e4000
+mmap(0x7fb10a8e5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e3000
+mmap(0x7fb10a8e4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e2000
+mmap(0x7fb10a8e3000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8de000
+mmap(0x7fb10a8e2000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8da000
+mmap(0x7fb10a8de000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8d6000
+mmap(0x7fb10a8da000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8d2000
+mmap(0x7fb10a8d6000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ce000
+mmap(0x7fb10a8d2000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ca000
+mmap(0x7fb10a8ce000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c9000
+munmap(0x7fb10a8e2000, 4096)            = 0
+mmap(0x7fb10a8ca000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c5000
+mmap(0x7fb10a8c9000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c1000
+mmap(0x7fb10a8c5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e2000
+mmap(0x7fb10a8e3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c0000
+mmap(0x7fb10a8c1000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bf000
+mmap(0x7fb10a8c0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8be000
+mmap(0x7fb10a8bf000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bd000
+mmap(0x7fb10a8be000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bc000
+mmap(0x7fb10a8bd000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bb000
+mmap(0x7fb10a8bc000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ba000
+mmap(0x7fb10a8bb000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b9000
+munmap(0x7fb10a8c9000, 4096)            = 0
+mmap(0x7fb10a8ba000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c9000
+mmap(0x7fb10a8ca000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b8000
+mmap(0x7fb10a8b9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b7000
+mmap(0x7fb10a8b8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b6000
+mmap(0x7fb10a8b7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b5000
+mmap(0x7fb10a8b6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b4000
+mmap(0x7fb10a8b5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b3000
+mmap(0x7fb10a8b4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b2000
+mmap(0x7fb10a8b3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b1000
+mmap(0x7fb10a8b2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b0000
+mmap(0x7fb10a8b1000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8af000
+mmap(0x7fb10a8b0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ae000
+mmap(0x7fb10a8af000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ad000
+mmap(0x7fb10a8ae000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ac000
+munmap(0x7fb10a8b9000, 4096)            = 0
+mmap(0x7fb10a8ad000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b9000
+mmap(0x7fb10a8ba000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ab000
+mmap(0x7fb10a8ac000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8aa000
+mmap(0x7fb10a8ab000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a9000
+mmap(0x7fb10a8aa000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a8000
+mmap(0x7fb10a8a9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a7000
+mmap(0x7fb10a8a8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a6000
+mmap(0x7fb10a8a7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a5000
+mmap(0x7fb10a8a6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a4000
+mmap(0x7fb10a8a5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a3000
+mmap(0x7fb10a8a4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a2000
+mmap(0x7fb10a8a3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a1000
+mmap(0x7fb10a8a2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a0000
+mmap(0x7fb10a8a1000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89f000
+mmap(0x7fb10a8a0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89e000
+mmap(0x7fb10a89f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89d000
+mmap(0x7fb10a89e000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89c000
+faccessat(AT_FDCWD, "config.ini", F_OK) = 0
+openat(AT_FDCWD, "config.ini", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 3
+read(3, "[", 1)                         = 1
+mmap(0x7fb10a89d000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89b000
+mmap(0x7fb10a89c000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89a000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "g", 1)                         = 1
 read(3, "a", 1)                         = 1
 read(3, "m", 1)                         = 1
 read(3, "e", 1)                         = 1
 read(3, "]", 1)                         = 1
 read(3, "\n", 1)                        = 1
+<<<<<<< HEAD
 mmap(0x7ecea5556000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5554000
 mmap(0x7ecea5555000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5553000
+=======
+mmap(0x7fb10a89b000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a899000
+mmap(0x7fb10a89a000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a898000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, ";", 1)                         = 1
 read(3, " ", 1)                         = 1
 read(3, "T", 1)                         = 1
@@ -87,8 +162,13 @@ read(3, " ", 1)                         = 1
 read(3, "s", 1)                         = 1
 read(3, "i", 1)                         = 1
 read(3, "z", 1)                         = 1
+<<<<<<< HEAD
 munmap(0x7ecea5556000, 4096)            = 0
 munmap(0x7ecea5555000, 4096)            = 0
+=======
+munmap(0x7fb10a89b000, 4096)            = 0
+munmap(0x7fb10a89a000, 4096)            = 0
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "e", 1)                         = 1
 read(3, " ", 1)                         = 1
 read(3, "o", 1)                         = 1
@@ -101,8 +181,13 @@ read(3, " ", 1)                         = 1
 read(3, "b", 1)                         = 1
 read(3, "o", 1)                         = 1
 read(3, "a", 1)                         = 1
+<<<<<<< HEAD
 mmap(0x7ecea5554000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5556000
 mmap(0x7ecea5557000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5555000
+=======
+mmap(0x7fb10a899000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89b000
+mmap(0x7fb10a89c000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89a000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "r", 1)                         = 1
 read(3, "d", 1)                         = 1
 read(3, " ", 1)                         = 1
@@ -121,8 +206,13 @@ read(3, "e", 1)                         = 1
 read(3, " ", 1)                         = 1
 read(3, "g", 1)                         = 1
 read(3, "a", 1)                         = 1
+<<<<<<< HEAD
 munmap(0x7ecea5556000, 4096)            = 0
 munmap(0x7ecea5555000, 4096)            = 0
+=======
+munmap(0x7fb10a89b000, 4096)            = 0
+munmap(0x7fb10a89a000, 4096)            = 0
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "m", 1)                         = 1
 read(3, "e", 1)                         = 1
 read(3, " ", 1)                         = 1
@@ -208,12 +298,21 @@ read(3, "=", 1)                         = 1
 read(3, "2", 1)                         = 1
 read(3, "0", 1)                         = 1
 read(3, "\n", 1)                        = 1
+<<<<<<< HEAD
 mmap(0x7ecea5556000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5556000
 mmap(0x7ecea5557000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5555000
 mmap(0x7ecea5556000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5552000
 mmap(0x7ecea5553000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5551000
 mmap(0x7ecea5552000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5550000
 mmap(0x7ecea5551000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea554f000
+=======
+mmap(0x7fb10a89b000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89b000
+mmap(0x7fb10a89c000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a89a000
+mmap(0x7fb10a89b000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a897000
+mmap(0x7fb10a898000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a896000
+mmap(0x7fb10a897000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a895000
+mmap(0x7fb10a896000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a894000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "\n", 1)                        = 1
 read(3, ";", 1)                         = 1
 read(3, " ", 1)                         = 1
@@ -489,8 +588,13 @@ read(3, "0", 1)                         = 1
 read(3, "0", 1)                         = 1
 read(3, "0", 1)                         = 1
 read(3, "\n", 1)                        = 1
+<<<<<<< HEAD
 mmap(0x7ecea5550000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea554e000
 mmap(0x7ecea554f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea554d000
+=======
+mmap(0x7fb10a895000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a893000
+mmap(0x7fb10a894000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a892000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "\n", 1)                        = 1
 read(3, ";", 1)                         = 1
 read(3, " ", 1)                         = 1
@@ -1035,8 +1139,13 @@ read(3, "y", 1)                         = 1
 read(3, "=", 1)                         = 1
 read(3, "0", 1)                         = 1
 read(3, "\n", 1)                        = 1
+<<<<<<< HEAD
 mmap(0x7ecea554e000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea554c000
 mmap(0x7ecea554d000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea554b000
+=======
+mmap(0x7fb10a893000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a891000
+mmap(0x7fb10a892000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a890000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "\n", 1)                        = 1
 read(3, ";", 1)                         = 1
 read(3, " ", 1)                         = 1
@@ -2169,8 +2278,13 @@ read(3, "r", 1)                         = 1
 read(3, "u", 1)                         = 1
 read(3, "e", 1)                         = 1
 read(3, "\n", 1)                        = 1
+<<<<<<< HEAD
 munmap(0x7ecea5550000, 4096)            = 0
 munmap(0x7ecea554f000, 4096)            = 0
+=======
+munmap(0x7fb10a895000, 4096)            = 0
+munmap(0x7fb10a894000, 4096)            = 0
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 read(3, "\n", 1)                        = 1
 read(3, "[", 1)                         = 1
 read(3, "w", 1)                         = 1
@@ -2988,6 +3102,7 @@ read(3, "u", 1)                         = 1
 read(3, "e", 1)                         = 1
 read(3, "\n", 1)                        = 1
 read(3, "", 1)                          = 0
+<<<<<<< HEAD
 munmap(0x7ecea5552000, 4096)            = 0
 munmap(0x7ecea5551000, 4096)            = 0
 munmap(0x7ecea554c000, 4096)            = 0
@@ -3098,10 +3213,123 @@ write(1, "@ctx=\"Launching liskvork\" versio"..., 44@ctx="Launching liskvork" ve
 ) = 44
 mmap(0x7ecea5560000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea555e000
 mmap(0x7ecea555f000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea555d000
+=======
+munmap(0x7fb10a897000, 4096)            = 0
+munmap(0x7fb10a896000, 4096)            = 0
+munmap(0x7fb10a891000, 4096)            = 0
+munmap(0x7fb10a890000, 4096)            = 0
+munmap(0x7fb10a899000, 4096)            = 0
+munmap(0x7fb10a898000, 4096)            = 0
+munmap(0x7fb10a893000, 4096)            = 0
+munmap(0x7fb10a892000, 4096)            = 0
+close(3)                                = 0
+munmap(0x7fb10a8bf000, 4096)            = 0
+munmap(0x7fb10a8bc000, 4096)            = 0
+munmap(0x7fb10a8bb000, 4096)            = 0
+munmap(0x7fb10a8ba000, 4096)            = 0
+munmap(0x7fb10a8c9000, 4096)            = 0
+munmap(0x7fb10a8b8000, 4096)            = 0
+munmap(0x7fb10a8b7000, 4096)            = 0
+munmap(0x7fb10a8b6000, 4096)            = 0
+munmap(0x7fb10a8b5000, 4096)            = 0
+munmap(0x7fb10a8b4000, 4096)            = 0
+munmap(0x7fb10a8b3000, 4096)            = 0
+munmap(0x7fb10a8b2000, 4096)            = 0
+munmap(0x7fb10a8b1000, 4096)            = 0
+munmap(0x7fb10a8b0000, 4096)            = 0
+munmap(0x7fb10a8af000, 4096)            = 0
+munmap(0x7fb10a8ae000, 4096)            = 0
+munmap(0x7fb10a8ad000, 4096)            = 0
+munmap(0x7fb10a8b9000, 4096)            = 0
+munmap(0x7fb10a8ab000, 4096)            = 0
+munmap(0x7fb10a8aa000, 4096)            = 0
+munmap(0x7fb10a8a9000, 4096)            = 0
+munmap(0x7fb10a8a8000, 4096)            = 0
+munmap(0x7fb10a8a7000, 4096)            = 0
+munmap(0x7fb10a8a6000, 4096)            = 0
+munmap(0x7fb10a8a5000, 4096)            = 0
+munmap(0x7fb10a8a4000, 4096)            = 0
+munmap(0x7fb10a8a3000, 4096)            = 0
+munmap(0x7fb10a8a2000, 4096)            = 0
+munmap(0x7fb10a8a1000, 4096)            = 0
+munmap(0x7fb10a8a0000, 4096)            = 0
+munmap(0x7fb10a89f000, 4096)            = 0
+munmap(0x7fb10a8be000, 4096)            = 0
+munmap(0x7fb10a8bd000, 4096)            = 0
+munmap(0x7fb10a89c000, 4096)            = 0
+munmap(0x7fb10a8de000, 16384)           = 0
+munmap(0x7fb10a8da000, 16384)           = 0
+munmap(0x7fb10a8d6000, 16384)           = 0
+munmap(0x7fb10a8d2000, 16384)           = 0
+munmap(0x7fb10a8ce000, 16384)           = 0
+munmap(0x7fb10a8ca000, 16384)           = 0
+munmap(0x7fb10a8c5000, 16384)           = 0
+munmap(0x7fb10a8c1000, 16384)           = 0
+munmap(0x7fb10a8e4000, 4096)            = 0
+munmap(0x7fb10a8e3000, 4096)            = 0
+munmap(0x7fb10a8e7000, 4096)            = 0
+munmap(0x7fb10a8e6000, 4096)            = 0
+munmap(0x7fb10a8e2000, 4096)            = 0
+munmap(0x7fb10a8c0000, 4096)            = 0
+mmap(0x7fb10a891000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a891000
+mmap(0x7fb10a892000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a892000
+mmap(0x7fb10a893000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a893000
+mmap(0x7fb10a897000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e1000
+mmap(0x7fb10a8e5000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8dd000
+mmap(0x7fb10a8e1000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8d9000
+mmap(0x7fb10a8dd000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8d5000
+mmap(0x7fb10a8d9000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8d1000
+mmap(0x7fb10a8d5000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8cd000
+mmap(0x7fb10a8d1000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c9000
+mmap(0x7fb10a8cd000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e7000
+mmap(0x7fb10a8e8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8e6000
+mmap(0x7fb10a8e7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c8000
+mmap(0x7fb10a8c9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c7000
+mmap(0x7fb10a8c8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c6000
+mmap(0x7fb10a8c7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c5000
+mmap(0x7fb10a8c6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c4000
+mmap(0x7fb10a8c5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c3000
+mmap(0x7fb10a8c4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c2000
+mmap(0x7fb10a8c3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c1000
+mmap(0x7fb10a8c2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8c0000
+mmap(0x7fb10a8c1000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bf000
+mmap(0x7fb10a8c0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8be000
+mmap(0x7fb10a8bf000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bd000
+mmap(0x7fb10a8be000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bc000
+mmap(0x7fb10a8bd000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8bb000
+mmap(0x7fb10a8bc000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ba000
+mmap(0x7fb10a8bb000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b9000
+mmap(0x7fb10a8ba000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b8000
+mmap(0x7fb10a8b9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b7000
+mmap(0x7fb10a8b8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b6000
+mmap(0x7fb10a8b7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b5000
+mmap(0x7fb10a8b6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b4000
+mmap(0x7fb10a8b5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b3000
+mmap(0x7fb10a8b4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b2000
+mmap(0x7fb10a8b3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b1000
+mmap(0x7fb10a8b2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8b0000
+mmap(0x7fb10a8b1000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8af000
+mmap(0x7fb10a8b0000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ae000
+mmap(0x7fb10a8af000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ad000
+mmap(0x7fb10a8ae000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8ab000
+mmap(0x7fb10a8ac000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8aa000
+mmap(0x7fb10a8ab000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a9000
+mmap(0x7fb10a8aa000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a8000
+mmap(0x7fb10a8a9000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a7000
+mmap(0x7fb10a8a8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a6000
+mmap(0x7fb10a8a7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a5000
+mmap(0x7fb10a8a6000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a4000
+write(1, "@ts=1732116528086 @l=INFO ", 26@ts=1732116528086 @l=INFO ) = 26
+write(1, "@ctx=\"Launching liskvork\" versio"..., 44@ctx="Launching liskvork" version=0.0.0-dev
+) = 44
+mmap(0x7fb10a8a5000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a3000
+mmap(0x7fb10a8a4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a2000
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
 openat(AT_FDCWD, "./board.log", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 3
 newfstatat(AT_FDCWD, "/home/sofianel/tek3/AIA/B-AIA-500-LYN-5-1-gomoku-sofiane.larbi/pbrain-gomoku-ai", {st_mode=S_IFREG|0755, st_size=710, ...}, 0) = 0
 pipe2([4, 5], O_CLOEXEC)                = 0
 pipe2([6, 7], O_CLOEXEC)                = 0
+<<<<<<< HEAD
 mmap(0x7ecea555e000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea555c000
 mmap(0x7ecea555d000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea555b000
 mmap(0x7ecea555c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7ecea5553000
@@ -3254,3 +3482,91 @@ munmap(0x7ecea5567000, 4096)            = 0
 munmap(0x7ecea55a0000, 4096)            = 0
 exit_group(0)                           = ?
 +++ exited with 0 +++
+=======
+mmap(0x7fb10a8a3000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a1000
+mmap(0x7fb10a8a2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a0000
+mmap(0x7fb10a8a1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a898000
+eventfd2(0, EFD_CLOEXEC)                = 8
+fork()                                  = 83389
+close(4)                                = 0
+close(7)                                = 0
+munmap(0x7fb10a898000, 8192)            = 0
+munmap(0x7fb10a8a1000, 4096)            = 0
+munmap(0x7fb10a8a0000, 4096)            = 0
+write(5, "ABOUT\r\n", 7)                = 7
+poll([{fd=6, events=POLLIN|POLLHUP}], 1, 5000) = 1 ([{fd=6, revents=POLLIN}])
+read(6, "ABOUT\n", 256)                 = 6
+mmap(0x7fb10a89a000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a1000
+mmap(0x7fb10a8a2000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fb10a8a0000
+write(1, "@ts=1732116528111 @l=ERROR ", 27@ts=1732116528111 @l=ERROR ) = 27
+write(1, "@ctx=\"Could not parse command\" d"..., 46@ctx="Could not parse command" data="ABOUT\n"
+) = 46
+write(1, "@ts=1732116528111 @l=FATAL ", 27@ts=1732116528111 @l=FATAL ) = 27
+write(1, "@ctx=\"Did not get proper ABOUT a"..., 48@ctx="Did not get proper ABOUT answer from AI!"
+) = 48
+munmap(0x7fb10a8a1000, 4096)            = 0
+munmap(0x7fb10a8a0000, 4096)            = 0
+close(3)                                = 0
+munmap(0x7fb10a8a3000, 4096)            = 0
+munmap(0x7fb10a8a2000, 4096)            = 0
+munmap(0x7fb10a89b000, 4096)            = 0
+munmap(0x7fb10a89a000, 4096)            = 0
+munmap(0x7fb10a8c8000, 4096)            = 0
+munmap(0x7fb10a8c5000, 4096)            = 0
+munmap(0x7fb10a8c4000, 4096)            = 0
+munmap(0x7fb10a8c3000, 4096)            = 0
+munmap(0x7fb10a8c2000, 4096)            = 0
+munmap(0x7fb10a8c1000, 4096)            = 0
+munmap(0x7fb10a8c0000, 4096)            = 0
+munmap(0x7fb10a8bf000, 4096)            = 0
+munmap(0x7fb10a8be000, 4096)            = 0
+munmap(0x7fb10a8bd000, 4096)            = 0
+munmap(0x7fb10a8bc000, 4096)            = 0
+munmap(0x7fb10a8bb000, 4096)            = 0
+munmap(0x7fb10a8ba000, 4096)            = 0
+munmap(0x7fb10a8b9000, 4096)            = 0
+munmap(0x7fb10a8b8000, 4096)            = 0
+munmap(0x7fb10a8b7000, 4096)            = 0
+munmap(0x7fb10a8b6000, 4096)            = 0
+munmap(0x7fb10a8b5000, 4096)            = 0
+munmap(0x7fb10a8b4000, 4096)            = 0
+munmap(0x7fb10a8b3000, 4096)            = 0
+munmap(0x7fb10a8b2000, 4096)            = 0
+munmap(0x7fb10a8b1000, 4096)            = 0
+munmap(0x7fb10a8b0000, 4096)            = 0
+munmap(0x7fb10a8af000, 4096)            = 0
+munmap(0x7fb10a8ae000, 4096)            = 0
+munmap(0x7fb10a8aa000, 4096)            = 0
+munmap(0x7fb10a8a9000, 4096)            = 0
+munmap(0x7fb10a8a8000, 4096)            = 0
+munmap(0x7fb10a8a7000, 4096)            = 0
+munmap(0x7fb10a8a6000, 4096)            = 0
+munmap(0x7fb10a8a5000, 4096)            = 0
+munmap(0x7fb10a8c7000, 4096)            = 0
+munmap(0x7fb10a8c6000, 4096)            = 0
+munmap(0x7fb10a8a4000, 4096)            = 0
+munmap(0x7fb10a8ad000, 4096)            = 0
+munmap(0x7fb10a8ab000, 4096)            = 0
+munmap(0x7fb10a893000, 16384)           = 0
+munmap(0x7fb10a8e1000, 16384)           = 0
+munmap(0x7fb10a8dd000, 16384)           = 0
+munmap(0x7fb10a8d9000, 16384)           = 0
+munmap(0x7fb10a8d5000, 16384)           = 0
+munmap(0x7fb10a8d1000, 16384)           = 0
+munmap(0x7fb10a8cd000, 16384)           = 0
+munmap(0x7fb10a8c9000, 16384)           = 0
+munmap(0x7fb10a89e000, 4096)            = 0
+munmap(0x7fb10a89d000, 4096)            = 0
+munmap(0x7fb10a891000, 4096)            = 0
+munmap(0x7fb10a892000, 4096)            = 0
+munmap(0x7fb10a8e7000, 4096)            = 0
+munmap(0x7fb10a8e6000, 4096)            = 0
+munmap(0x7fb10a8ac000, 4096)            = 0
+munmap(0x7fb10a8e5000, 4096)            = 0
+write(2, "error: BadInitialization\n", 25error: BadInitialization
+) = 25
+exit_group(1)                           = ?
++++ exited with 1 +++
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+BrokenPipeError: [Errno 32] Broken pipe
+>>>>>>> 0efaf96 ([ADD] liskvork binary)
