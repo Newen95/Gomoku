@@ -30,12 +30,17 @@ class Map:
         self.map = [[0 for _ in range(self.size)] for _ in range(self.size)]
 
     def update_element(self, x, y, value):
-        if x < self.size and y < self.size:
-            if self.map[y][x] == 0:
-                self.map[y][x] = value
-                self.history.append((x, y, value))
-                return True
-        return False
+        if x >= self.size or y >= self.size:
+            return f"ERROR: Position ({x}, {y}) is out of the map. The board size is {self.size}x{self.size}."
+        if self.map[y][x] != 0:
+            return f"ERROR: Cell ({x}, {y}) is already occupied."
+        if value not in (1, 2):
+            return "ERROR: Invalid value. Allowed values are 1 or 2."
+        
+        self.map[y][x] = value
+        self.history.append((x, y, value))
+        return f"OK"
+
 
     def print_map(self):
         for ligne in self.map:
