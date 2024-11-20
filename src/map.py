@@ -14,7 +14,7 @@ class Map:
         if not self.history:
             return False
         x, y, value = self.history.pop()
-        self.map[y][x] = 0  # Retirer la dernière pièce
+        self.map[y][x] = 0
         return True
 
     def init_tab(self, size):
