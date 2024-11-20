@@ -44,6 +44,4 @@ def parse(enter, state):
     action = command_action.get(command, lambda: "ERROR: Unknown command")
     result = action()
     
-    if not state.started:
-        return "ERROR: The game has not started yet."
     return result
