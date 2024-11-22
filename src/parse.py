@@ -19,6 +19,10 @@ from src.command.print import print_command
 from src.send import send_error
 from src.send import send_unknown
 
+def print_command(state):
+    state.map.print_map()
+    return "PRINT"
+
 def parse(enter, state):
     parts = enter.strip().split()
     command = parts[0].upper() if parts else ""

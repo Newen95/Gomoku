@@ -42,7 +42,7 @@ class Map:
         
         self.map[y][x] = value
         self.history.append((x, y, value))
-        return send_message("OK")
+        return "OK"
 
 
     def print_map(self):
