@@ -11,6 +11,7 @@ class GameState:
     def __init__(self):
         self.map = Map()
         self.started = False
+        self.size = 0
         self.settings = {
             "timeout_match": 0,
             "timeout_turn": 0,
