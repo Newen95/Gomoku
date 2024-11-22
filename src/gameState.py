@@ -19,6 +19,7 @@ class GameState:
             "time_left": 0,
             "game_type": 0,
             "rule": 0,
-            "evaluate": 0
+            "evaluate": 0,
+            "folder": "./"
         }
    

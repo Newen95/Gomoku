@@ -27,7 +27,7 @@ def parse(enter, state):
         "END": lambda: "END",
         "START": lambda: start_command(parts, state),
         "TURN": lambda: turn_command(parts, state),
-        "BEGIN": lambda: begin_command(state),
+        "BEGIN": lambda: begin_command(parts, state),
         "BOARD": lambda: board_command(parts, state),
         "INFO": lambda: info_command(parts, state),
         "ABOUT": lambda: about_command(),
