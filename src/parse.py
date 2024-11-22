@@ -33,7 +33,7 @@ def parse(enter, state):
         "BEGIN": lambda: begin_command(state),
         "BOARD": lambda: board_command(parts, state),
         "INFO": lambda: info_command(parts, state),
-        "ABOUT": lambda: "ABOUT",
+        "ABOUT": lambda: about_command(),
         "PRINT": lambda: print_command(state),
         "RESTART": lambda: restart_game_command(state),
         "RECTSTART": lambda: rectstart_command(parts, state),

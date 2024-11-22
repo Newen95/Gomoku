@@ -24,8 +24,6 @@ def run():
                 print(result)
     except KeyboardInterrupt:
         print("\nProgram interrupted by user. Exiting...")
-    except Exception as e:
-        print(f"Unexpected error: {e}")
 
 if __name__ == "__main__":
     run()
