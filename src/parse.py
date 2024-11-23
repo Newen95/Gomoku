@@ -41,13 +41,6 @@ def parse(enter, state):
         "TAKEBACK": lambda: takeback_command(parts, state),
         "PLAY": lambda: play_command(parts, state),
     }
-    
-<<<<<<<<< Temporary merge branch 1
-    action = command_action.get(command, lambda: "ERROR: Unknown command")
-    result = action()
-    
-    return result
-=========
     if command not in command_action:
         return send_unknown("Unknown command.")
 
@@ -55,12 +48,3 @@ def parse(enter, state):
         return command_action[command]()
 
     return command_action[command]()
-<<<<<<< HEAD
-=======
-=======
-    action = command_action.get(command, lambda: "ERROR: Unknown command")
-    result = action()
-    
-    return result
->>>>>>> 815510a ([UPD] delete the test if the game was started)
->>>>>>> a8170dc ([UPD] delete the test if the game was started)

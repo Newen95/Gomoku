@@ -17,11 +17,5 @@ def info_command(parts = list, state = GameState):
     key = parts[1]
     value = parts[2]
 
-<<<<<<< HEAD
-    gameState.settings[key] = int(value)
-=======
     settings[key] = int(value)
-
-    print("current settings: settings", settings)
->>>>>>> 50e9504569e2068e7b66fa7d0a094dc60b139e26
     
