@@ -42,15 +42,17 @@ def parse(enter, state):
         "PLAY": lambda: play_command(parts, state),
     }
     
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
+    action = command_action.get(command, lambda: "ERROR: Unknown command")
+    result = action()
+    
+    return result
+=========
     if command not in command_action:
         return send_unknown("Unknown command.")
 
     if command == "START":
         return command_action[command]()
-
-    if not state.started and command != "END":
-        return send_error("The game has not started yet.")
 
     return command_action[command]()
 <<<<<<< HEAD
