@@ -20,7 +20,7 @@ def turn_command(parts, state):
 
         if x >= state.map.size or y >= state.map.size:
             return send_error("Coordinates out of the map.")
-            
+
         if state.map.update_element(x, y, 2) != "OK":
             return send_error("Something went wrong.")
         
@@ -28,7 +28,7 @@ def turn_command(parts, state):
         if ai_move:
             ai_x, ai_y = ai_move
             if state.map.update_element(ai_x, ai_y, 1) == "OK":
-                return send_message(f"AI_MOVE {ai_x},{ai_y}")
+                return send_message(f"{ai_x}, {ai_y}")
             else:
                 return send_error("AI move failed.")
         else:
