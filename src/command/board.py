@@ -7,6 +7,7 @@
 
 from src.send import send_error
 from src.send import send_message   
+from src.algorithm.ai import ai_algorithm
 
 def re_init_map(parts, state):
     try:
@@ -48,5 +49,13 @@ def board(parts, state):
 def board_command(parts, gameState):
     if not board(parts, gameState):
         return send_error("Invalid board format.")
-    return send_message("BOARD")
+    ai_move = ai_algorithm(gameState.map.map, time_limit=5, depth=2)
+    if ai_move:
+        ai_x, ai_y = ai_move
+        if gameState.map.update_element(ai_x, ai_y, 1) == "OK":
+            return send_message(f"{ai_x}, {ai_y}")
+        else:
+             return send_error("AI move failed.")
+    else:
+        return send_error("AI failed to choose a move.")
 

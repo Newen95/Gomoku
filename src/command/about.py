@@ -8,4 +8,4 @@
 from src.send import send_message
 
 def about_command():
-    return send_message("ABOUT")
+    return "name=\"DaBrain\", version=\"1.0\", author=\"Sofiane LARBI; Newen Calle; Mélissa Mi You\", country=\"France\""

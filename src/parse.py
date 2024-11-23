@@ -31,24 +31,20 @@ def parse(enter, state):
         "END": lambda: "END",
         "START": lambda: start_command(parts, state),
         "TURN": lambda: turn_command(parts, state),
-        "BEGIN": lambda: begin_command(state),
+        "BEGIN": lambda: begin_command(parts, state),
         "BOARD": lambda: board_command(parts, state),
         "INFO": lambda: info_command(parts, state),
-        "ABOUT": lambda: "ABOUT",
+        "ABOUT": lambda: about_command(),
         "PRINT": lambda: print_command(state),
         "RESTART": lambda: restart_game_command(state),
         "RECTSTART": lambda: rectstart_command(parts, state),
         "TAKEBACK": lambda: takeback_command(parts, state),
         "PLAY": lambda: play_command(parts, state),
     }
-    
     if command not in command_action:
         return send_unknown("Unknown command.")
 
     if command == "START":
         return command_action[command]()
-
-    if not state.started and command != "END":
-        return send_error("The game has not started yet.")
 
     return command_action[command]()
