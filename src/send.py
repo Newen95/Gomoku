@@ -1,5 +1,5 @@
 def send_message(message):
-    return f"MESSAGE {message}"
+    return f"{message}"
 
 def send_debug(debug_info):
     return f"DEBUG {debug_info}"

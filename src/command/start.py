@@ -19,6 +19,6 @@ def start_command(parts, state):
             return send_error("Invalid board size. It must be between 1 and 20.")
         state.map.init_tab(size)
         state.started = True
-        return send_ok("- everything is good")
+        return "OK"
     except (IndexError, ValueError):
         return send_error("Invalid arguments for START command. Expected format: START size.")
