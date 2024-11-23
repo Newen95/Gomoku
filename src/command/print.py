@@ -8,5 +8,4 @@
 from src.send import send_message   
 
 def print_command(state):
-    state.map.print_map()
-    return send_message("PRINT")
+    return state.map.print_map()
