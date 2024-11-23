@@ -5,9 +5,9 @@
 ## restart
 ##
 
-from src.send import send_message   
+from src.send import send_ok   
 
 def restart_game_command(state):
     state.map.restart()
     state.started = False
-    return send_message("Game has been restarted.")
+    return send_ok("")

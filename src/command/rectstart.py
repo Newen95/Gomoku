@@ -6,7 +6,7 @@
 ##
 
 from src.send import send_error
-from src.send import send_message   
+from src.send import send_ok   
 
 def rectstart_command(parts, state):
     if len(parts) != 2:
@@ -20,7 +20,7 @@ def rectstart_command(parts, state):
             return send_error("Invalid dimensions for RECTSTART. Width and height must be positive.")
 
         state.map.init_tab_rectangular(width, height)
-        return send_message("Rectangular board has started.")
+        return send_ok("- parameters are good")
 
     except (IndexError, ValueError):
         return send_error("Invalid format for RECTSTART command.")

@@ -9,3 +9,6 @@ def send_error(error_message):
 
 def send_unknown(unknown_message):
     return f"UNKNOWN {unknown_message}"
+
+def send_ok(ok_message):
+    return f"OK {ok_message}"

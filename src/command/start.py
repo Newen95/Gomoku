@@ -6,7 +6,7 @@
 ##
 
 from src.send import send_error
-from src.send import send_message
+from src.send import send_ok
 
 def start_command(parts, state):
     if len(parts) != 2:
@@ -19,6 +19,6 @@ def start_command(parts, state):
             return send_error("Invalid board size. It must be between 1 and 20.")
         state.map.init_tab(size)
         state.started = True
-        return send_message("Game has started.")
+        return send_ok("- everything is good")
     except (IndexError, ValueError):
         return send_error("Invalid arguments for START command. Expected format: START size.")

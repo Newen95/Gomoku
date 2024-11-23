@@ -6,7 +6,7 @@
 ##
 
 from src.send import send_error
-from src.send import send_message   
+from src.send import send_ok   
 
 def takeback_command(parts, state):
     if len(parts) != 2:
@@ -16,7 +16,7 @@ def takeback_command(parts, state):
         x = int(x_str.strip())
         y = int(y_str.strip())
         if state.map.takeback():
-            return send_message("Takeback command worked correctly.")
+            return send_ok("")
         return send_error("Unable to take back move.")
     except (IndexError, ValueError):
         return send_error("Invalid coordinates.")
