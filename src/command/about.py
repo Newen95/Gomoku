@@ -5,5 +5,7 @@
 ## about
 ##
 
+from src.send import send_message
+
 def about_command():
-    return "ABOUT"
+    return send_message("ABOUT")

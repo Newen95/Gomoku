@@ -15,10 +15,11 @@ from src.command.restart import restart_game_command
 from src.command.start import start_command
 from src.command.takeback import takeback_command
 from src.command.turn import turn_command
+from src.command.print import print_command
+from src.send import send_error
+from src.send import send_unknown
 
 def print_command(state):
-    if not state.started:
-        return "ERROR: The game has not started yet."
     state.map.print_map()
     return "PRINT"
 
@@ -41,7 +42,13 @@ def parse(enter, state):
         "PLAY": lambda: play_command(parts, state),
     }
     
-    action = command_action.get(command, lambda: "ERROR: Unknown command")
-    result = action()
-    
-    return result
+    if command not in command_action:
+        return send_unknown("Unknown command.")
+
+    if command == "START":
+        return command_action[command]()
+
+    if not state.started and command != "END":
+        return send_error("The game has not started yet.")
+
+    return command_action[command]()

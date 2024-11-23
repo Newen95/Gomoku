@@ -5,6 +5,9 @@
 ## board
 ##
 
+from src.send import send_error
+from src.send import send_message   
+
 def re_init_map(parts, state):
     try:
         x_str, y_str, value = parts.split(',')
@@ -18,10 +21,10 @@ def re_init_map(parts, state):
 
         if x >= state.map.size or y >= state.map.size:
             return False
-        if val != 1 or val != 2:
+        if val < 1 or val > 2:
             return False
 
-        if state.map.update_element(x, y, val):
+        if state.map.update_element(x, y, val) == "OK":
             return True
         return False
     except (ValueError, IndexError):
@@ -37,15 +40,13 @@ def board(parts, state):
         enter = input()
         parts = enter.strip().split()
         if (parts[0] == "DONE"):
-            return
+            return True
         if len(parts) != 1:
-            return
+            return False
         re_init_map(parts[0], state)
         
 def board_command(parts, gameState):
-    if not gameState.started:
-        return "ERROR: The game has not started yet."
     if not board(parts, gameState):
-        return "ERROR: Invalid board format."
-    return "BOARD"
+        return send_error("Invalid board format.")
+    return send_message("BOARD")
 

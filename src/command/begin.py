@@ -5,9 +5,10 @@
 ## begin
 ##
 
-def begin_command(gameState):
-    if gameState.map.update_element(11, 10, 1):
-        print("11,10")
-        return "BEGIN"
-    return "ERROR"
+from src.send import send_error
 
+def begin_command(gameState):
+    result = gameState.map.update_element(11, 10, 1)
+    if result == "OK":
+        return "11,10"
+    return send_error(result)
