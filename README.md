@@ -1,18 +1,21 @@
 Gomoku
 ===
 
-### Launch Liskvork:
+Language: python3
 
+### The project:
+The goal of this project is to implement a Gomoku Narabe game bot (also called Wuzi Qi, Slope,
+Darpion
+or Five in a Row), focusing on the performance of its artificial intelligence.
+
+## USAGE:
+
+### Prerequisites
+* python3
+* make
 ```
-cd liskvork-0.5.1/
-./zig-out/bin/liskvork
+make
+./pbrain-gomoku-ai
 ```
 
-*> change parameters in "config.ini"*
-
-### Make a Log file of Liskvork Process
-
-```
-cd liskvork-0.5.1/
-strace ./zig-out/bin/liskvork > log.txt 2>&1
-```
+Author [**Sofiane LARBI**](https://github.com/Sofiane-Larbi), [**Mélissa Mi You**](https://github.com/melfrom987), [**Newen Calle**](https://github.com/Newenc)
