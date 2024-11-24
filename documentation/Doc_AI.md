@@ -12,3 +12,4 @@ This AI is designed to make intelligent moves in the Gomoku game by evaluating t
     Minimax with Alpha-Beta Pruning:
         The minimax algorithm recursively evaluates moves to a certain depth, predicting potential future board states.
         Alpha-beta pruning improves efficiency by eliminating nodes that won't influence the final decision.
+<img id="lightbox-image" src="https://media.geeksforgeeks.org/wp-content/uploads/MIN_MAX2.jpg" alt="Lightbox" class="lightbox-display-image">
