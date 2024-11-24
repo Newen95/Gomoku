@@ -12,7 +12,8 @@ This is a 2-player game that is played on a 20x20 game board (called goban). We 
 simplified version of the game. Every player plays a stone at their turn, and the game ends as
 soon as one has 5 stones in a row (vertically, horizontally or diagonaly) - and thus wins
 
-The bot is complaint the communication protocol of [**liskvork**](https://github.com/liskvork/liskvork), use it to test the AI.
+The bot is complaint to the communication protocol of [**liskvork**](https://github.com/liskvork/liskvork), use it to test the AI.
+Here's the [**AI_protocol**](https://github.com/liskvork/docs/blob/master/src/ai_protocol_original.md).
 
 ## USAGE:
 
