@@ -24,7 +24,7 @@ def turn_command(parts, state):
         if state.map.update_element(x, y, 2) != "OK":
             return send_error("Something went wrong.")
         
-        ai_move = ai_algorithm(state.map.map, time_limit=5, depth=2)
+        ai_move = ai_algorithm(state.map.map, state.map.size)
         if ai_move:
             ai_x, ai_y = ai_move
             if state.map.update_element(ai_x, ai_y, 1) == "OK":
