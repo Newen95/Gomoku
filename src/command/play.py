@@ -24,7 +24,7 @@ def play_command(parts, state):
             return send_error("Coordinates out of the map.")
 
         if state.map.update_element(x, y, 1):
-            return send_message("PLAY command worked correctly.")
+            return send_message((f"{x},{y}"))
         return send_error("Unable to place the move.")
     except (IndexError, ValueError):
         return send_error("Invalid format. Expected format: PLAY x,y.")

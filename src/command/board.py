@@ -53,7 +53,7 @@ def board_command(parts, gameState):
     if ai_move:
         ai_x, ai_y = ai_move
         if gameState.map.update_element(ai_x, ai_y, 1) == "OK":
-            return send_message(f"{ai_x}, {ai_y}")
+            return send_message(f"{ai_x},{ai_y}")
         else:
              return send_error("AI move failed.")
     else:
