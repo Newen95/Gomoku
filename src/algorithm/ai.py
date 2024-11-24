@@ -6,12 +6,14 @@
 import random
 import copy
 
-## @brief Access point to heuristic function to give a score to the base move
-##        based on most valuable pattern in game
-## @param map The current game board.
-## @param player The player for whom the heuristic is being calculated.
-## @param opponent  The opponent for whom the heuristic is being calculated.
-## @return Heuristic score of the game.
+"""
+    Access point to heuristic function to give a score to the base move based on most valuable pattern in game
+    
+    Args:
+        map: The current game board.
+        player: The player for whom the heuristic is being calculated.
+        opponent:  The opponent for whom the heuristic is being calculated.
+"""
 def heuristic_computation(map, player, opponent):
     score = 0
 
@@ -22,14 +24,17 @@ def heuristic_computation(map, player, opponent):
             elif map[y][x] == opponent:
                 score -= win_score(map, x, y, opponent, player)
     return score
+    
+"""
+    Computes the score to find the best move best on patern alignment.
 
-## @brief Computes the score to find the best move best on patern alignment.
-## @param map The current game board.
-## @param x The x-coordinate of the position being evaluated.
-## @param y The y-coordinate of the position being evaluated.
-## @param player The player for whom the score is being calculated.
-## @param opponent The opponent for whom the score is being calculated.
-## @return The score for the given position based on the patterns.
+    Args:
+        map: The current game board.
+        x: The x-coordinate of the position being evaluated.
+        y: The y-coordinate of the position being evaluated.
+        player: The player for whom the score is being calculated.
+        opponent: The opponent for whom the score is being calculated.
+"""
 def win_score(map, x, y, player, opponent):
     score = 0
 
@@ -37,7 +42,7 @@ def win_score(map, x, y, player, opponent):
         player_count = 0
         blocks = 0
         opponent_count = 0
-        for step in range(-3, 6):
+        for step in range(-4, 3):
             nx, ny = x + step * dx, y + step * dy
             if 0 <= ny < len(map) and 0 <= nx < len(map[0]):
                 if map[ny][nx] == player:
@@ -68,9 +73,12 @@ def win_score(map, x, y, player, opponent):
             score += 500
     return score
 
-## @brief Retrieves all possible moves on the game board.
-## @param map The current game board.
-## @return A list of tuples representing the coordinates of all possible moves.
+"""
+    Retrieves all possible moves on the game board.
+
+    Args:
+        map: The current game board.
+"""
 def get_possible_moves(map):
     moves = []
     for y in range(len(map)):
@@ -79,15 +87,18 @@ def get_possible_moves(map):
                 moves.append((x, y))
     return moves
 
-# @brief Implements the minimax algorithm with alpha-beta pruning.
-## @param map The current game board.
-## @param depth The depth of the search tree.
-## @param alpha The alpha value for pruning.
-## @param beta The beta value for pruning.
-## @param maximazingPlayer Boolean indicating whether it is maximizing or minimizing.
-## @param player The current player.
-## @param opponent The opponent player.
-## @return A tuple containing the best score and the best move.
+"""
+    Implements the minimax algorithm with alpha-beta pruning.
+
+    Args:
+        map: The current game board.
+        depth: The depth of the search tree.
+        alpha: The alpha value for pruning.
+        beta: The beta value for pruning.
+        maximazingPlayer: Boolean indicating whether it is maximizing or minimizing.
+        player: The current player.
+        opponent: The opponent player.
+"""
 def minimax(map, depth, alpha, beta, maximazingPlayer, player, opponent):
     if depth == 0:
         return heuristic_computation(map, player, opponent), None
@@ -123,6 +134,10 @@ def minimax(map, depth, alpha, beta, maximazingPlayer, player, opponent):
                 break
         return min_score, best_move
 
+"""
+    Call the ai algorithm
+
+"""
 def ai_algorithm(map, size):
     player = 1
     opponent = 2 
