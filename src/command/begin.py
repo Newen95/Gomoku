@@ -16,4 +16,4 @@ def begin_command(parts : list, state : GameState):
     x = int(state.map.size/2)
     y = int(state.map.size/2)
     result = state.map.update_element(x, y, 1)
-    return f'{x}, {y}'
+    return f'{x},{y}'
