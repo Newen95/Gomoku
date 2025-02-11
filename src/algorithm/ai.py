@@ -35,56 +35,78 @@ def heuristic_computation(map, player, opponent):
         player: The player for whom the score is being calculated.
         opponent: The opponent for whom the score is being calculated.
 """
-def win_score(map, x, y, player, opponent):
+def win_score(board, x, y, player, opponent):
     score = 0
-
-    for dx, dy in [(1, 0), (0, 1), (1, 1), (1, -1)]:
+    directions = [(1, 0), (0, 1), (1, 1), (1, -1)]
+    for dx, dy in directions:
         player_count = 0
         blocks = 0
         opponent_count = 0
-        for step in range(-4, 3):
+        open_start = False
+        open_end = False
+
+        for step in range(-4, 5):
             nx, ny = x + step * dx, y + step * dy
-            if 0 <= ny < len(map) and 0 <= nx < len(map[0]):
-                if map[ny][nx] == player:
+            if 0 <= ny < len(board) and 0 <= nx < len(board[0]):
+                cell = board[ny][nx]
+                if cell == player:
                     player_count += 1
-                elif map[ny][nx] == opponent:
+                elif cell == opponent:
                     opponent_count += 1
-                elif map[ny][nx] == 0:
-                    pass
-                else:
                     blocks += 1
+                elif cell == 0:
+                    if step == -4:
+                        open_start = True
+                    if step == 4:
+                        open_end = True
+            else:
+                blocks += 1
         if player_count >= 5:
             score += 10000
-        elif opponent_count == 4 and blocks == 0:
-            score += 1000
-        elif player_count == 4 and blocks == 0:
-            score += 800
-        elif opponent_count == 3 and blocks == 0:
-            score += 100
-        elif player_count == 3 and blocks == 0:
-            score += 80
-        elif player_count == 2 and blocks == 0:
-            score += 10
-        elif player_count == 1 and blocks == 0:
-            score += 1
-        if player_count == 4 and blocks == 1:
-            score += 5000
-        elif player_count == 3 and blocks == 1:
-            score += 500
-    return score
+        elif player_count == 4:
+            if open_start or open_end:
+                score += 800
+            else:
+                score += 500
+        elif player_count == 3:
+            if open_start and open_end:
+                score += 80
+            else:
+                score += 40
 
+    return score
 """
     Retrieves all possible moves on the game board.
 
     Args:
         map: The current game board.
 """
-def get_possible_moves(map):
+def get_possible_moves(board):
     moves = []
-    for y in range(len(map)):
-        for x in range(len(map[y])):
-            if map[y][x] == 0:
-                moves.append((x, y))
+    board_size = len(board)
+    for y in range(board_size):
+        for x in range(board_size):
+            if board[y][x] == 0:
+                neighbor_found = False
+                for dy in range(-1, 2):
+                    for dx in range(-1, 2):
+                        ny = y + dy
+                        nx = x + dx
+                        if 0 <= ny < board_size and 0 <= nx < board_size:
+                            if board[ny][nx] != 0:
+                                neighbor_found = True
+                                break
+                    if neighbor_found:
+                        break
+                if neighbor_found:
+                    moves.append((x, y))
+    if not moves:
+        for y in range(board_size):
+            for x in range(board_size):
+                if board[y][x] == 0:
+                    moves.append((x, y))
+    center = board_size // 2
+    moves.sort(key=lambda move: abs(move[0] - center) + abs(move[1] - center))
     return moves
 
 """

@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2024
-## Gomoku
-## File description:
-## parse
-##
-
 from src.command.about import about_command  
 from src.command.begin import begin_command
 from src.command.board import board_command
@@ -27,6 +20,10 @@ def parse(enter, state):
     parts = enter.strip().split()
     command = parts[0].upper() if parts else ""
     
+    commands_require_start = ["TURN", "BEGIN", "BOARD", "PLAY", "TAKEBACK", "RESTART", "RECTSTART"]
+    if command in commands_require_start and not state.started:
+        return send_error("Game has not been started yet")
+
     command_action = {
         "END": lambda: "END",
         "START": lambda: start_command(parts, state),
@@ -46,5 +43,5 @@ def parse(enter, state):
 
     if command == "START":
         return command_action[command]()
-
+    
     return command_action[command]()
