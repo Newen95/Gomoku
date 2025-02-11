@@ -13,6 +13,8 @@ def begin_command(parts : list, state : GameState):
     if len(parts) != 1:
         send_error("Begin command - No arguments expected")
         return
+    if not state.started:
+        return send_error("Begin command - Game has not been started yet")
     x = int(state.map.size/2)
     y = int(state.map.size/2)
     result = state.map.update_element(x, y, 1)
