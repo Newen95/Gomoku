@@ -20,7 +20,7 @@ def parse(enter, state):
     parts = enter.strip().split()
     command = parts[0].upper() if parts else ""
     
-    commands_require_start = ["TURN", "BEGIN", "BOARD", "PLAY", "TAKEBACK", "RESTART", "RECTSTART"]
+    commands_require_start = ["TURN", "BEGIN", "BOARD", "PLAY", "TAKEBACK", "RESTART", "RECTSTART", "PRINT"]
     if command in commands_require_start and not state.started:
         return send_error("Game has not been started yet")
 

@@ -24,7 +24,7 @@ def heuristic_computation(map, player, opponent):
             elif map[y][x] == opponent:
                 score -= win_score(map, x, y, opponent, player)
     return score
-    
+
 """
     Computes the score to find the best move best on patern alignment.
 
@@ -162,7 +162,7 @@ def minimax(map, depth, alpha, beta, maximazingPlayer, player, opponent):
 """
 def ai_algorithm(map, size):
     player = 1
-    opponent = 2 
+    opponent = 2
     depth = 2
     copy_map = copy.deepcopy(map)
     best_score, best_move = minimax(copy_map, depth, float('-inf'), float('inf'), True, player, opponent)
