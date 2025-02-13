@@ -14,9 +14,9 @@ def begin_command(parts: list, state: GameState):
         return send_error("Begin command - No arguments expected")
     if not state.started:
         return send_error("Begin command - Game has not been started yet")
-    if hasattr(state, "begin_used") and state.begin_used:
-        return send_error("Begin command - Already used")
-    state.begin_used = True
+    board = state.map.map
+    if any(cell != 0 for row in board for cell in row):
+        return send_error("Begin command - The board must be empty")
 
     x = int(state.map.size / 2)
     y = int(state.map.size / 2)

@@ -14,16 +14,18 @@ import copy
         player: The player for whom the heuristic is being calculated.
         opponent:  The opponent for whom the heuristic is being calculated.
 """
-def heuristic_computation(map, player, opponent):
+
+def heuristic_computation(board, player, opponent):
     score = 0
 
-    for y in range(len(map)):
-        for x in range(len(map[y])):
-            if map[y][x] == player:
-                score += win_score(map, x, y, player, opponent)
-            elif map[y][x] == opponent:
-                score -= win_score(map, x, y, opponent, player)
+    for y in range(len(board)):
+        for x in range(len(board[y])):
+            if board[y][x] == player:
+                score += win_score(board, x, y, player, opponent)
+            elif board[y][x] == opponent:
+                score -= 2 * win_score(board, x, y, opponent, player)
     return score
+
 
 """
     Computes the score to find the best move best on patern alignment.
@@ -39,9 +41,12 @@ def win_score(board, x, y, player, opponent):
     score = 0
     directions = [(1, 0), (0, 1), (1, 1), (1, -1)]
     for dx, dy in directions:
+        multiplier = 1.0
+        if (dx, dy) in [(1, 1), (1, -1)]:
+            multiplier = 1.5
+        
         player_count = 0
         blocks = 0
-        opponent_count = 0
         open_start = False
         open_end = False
 
@@ -52,7 +57,6 @@ def win_score(board, x, y, player, opponent):
                 if cell == player:
                     player_count += 1
                 elif cell == opponent:
-                    opponent_count += 1
                     blocks += 1
                 elif cell == 0:
                     if step == -4:
@@ -61,20 +65,29 @@ def win_score(board, x, y, player, opponent):
                         open_end = True
             else:
                 blocks += 1
+
         if player_count >= 5:
-            score += 10000
+            score += int(10000 * multiplier)
         elif player_count == 4:
             if open_start or open_end:
-                score += 800
+                score += int(800 * multiplier)
             else:
-                score += 500
+                score += int(500 * multiplier)
         elif player_count == 3:
             if open_start and open_end:
-                score += 80
+                score += int(150 * multiplier)
             else:
-                score += 40
-
+                score += int(40 * multiplier)
+        elif player_count == 2:
+            if open_start and open_end:
+                score += int(20 * multiplier)
+            elif open_start or open_end:
+                score += int(10 * multiplier)
+        elif player_count == 1:
+            score += int(1 * multiplier)
     return score
+
+
 """
     Retrieves all possible moves on the game board.
 
