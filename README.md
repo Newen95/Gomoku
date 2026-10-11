@@ -1,28 +1,52 @@
-Gomoku
-===
+# Gomoku AI
 
-Language: python3
+A Gomoku (five in a row) bot written in Python, built for the Epitech AI module.
+It plays on a 20×20 board and talks to any game manager that implements the
+[Gomocup / liskvork AI protocol](https://github.com/liskvork/docs/blob/master/src/ai_protocol_original.md),
+such as [liskvork](https://github.com/liskvork/liskvork).
 
-## The project:
-The goal of this project is to implement a Gomoku Narabe game bot (also called Wuzi Qi, Slope,
-Darpion
-or Five in a Row), focusing on the performance of its artificial intelligence.
+## How the AI plays
 
-This is a 2-player game that is played on a 20x20 game board (called goban). We use a very
-simplified version of the game. Every player plays a stone at their turn, and the game ends as
-soon as one has 5 stones in a row (vertically, horizontally or diagonaly) - and thus wins
+- **Minimax with alpha-beta pruning** explores the moves of both players and cuts
+  branches that cannot change the decision.
+- **Iterative deepening under a time budget**: the search goes one level deeper at a
+  time and stops at 4.5 s, keeping the best move of the last completed depth, so the
+  bot always answers within the protocol's time limit.
+- **Transposition table**: already evaluated positions are cached to avoid searching
+  them twice.
+- **Candidate moves** are restricted to empty cells within two squares of an existing
+  stone, which keeps the branching factor small on a 400-cell board.
+- **Pattern heuristic**: each line is scored by shape (five, open four, four, open
+  three…), diagonals weigh more, multiple simultaneous threats get a bonus, and the
+  opponent's threats count double so the bot defends as much as it attacks.
 
-The bot is complaint to the communication protocol of [**liskvork**](https://github.com/liskvork/liskvork), use it to test the AI.
-Here's the [**AI_protocol**](https://github.com/liskvork/docs/blob/master/src/ai_protocol_original.md).
+More detail in [`documentation/Doc_AI.md`](documentation/Doc_AI.md).
 
-## USAGE:
+## Protocol
 
-### Prerequisites
-* python3
-* make
+Every protocol command lives in its own module under `src/command/`
+(`START`, `TURN`, `BEGIN`, `BOARD`, `INFO`, `END`, `ABOUT`, `RESTART`,
+`TAKEBACK`, `RECTSTART`), dispatched by `src/parse.py`; `src/algorithm/ai.py`
+holds the search.
+
 ```
-make
-./pbrain-gomoku-ai
+START 20      ->  OK
+BEGIN         ->  10,10
+TURN 11,11    ->  11,9
 ```
 
-Author: [**Sofiane LARBI**](https://github.com/Sofiane-Larbi), [**Mélissa Mi You**](https://github.com/melfrom987), [**Newen Calle**](https://github.com/Newenc)
+## Usage
+
+Requires Python 3 and make.
+
+```sh
+make                 # builds the pbrain-gomoku-ai executable
+./pbrain-gomoku-ai   # then speak the protocol on stdin/stdout, or plug it into liskvork
+```
+
+## Team
+
+Built by a team of three:
+[Sofiane Larbi](https://github.com/Sofiane-Larbi),
+[Mélissa Mi You](https://github.com/melfrom987) and
+[Newen Calle](https://github.com/Newen95).
